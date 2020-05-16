@@ -13,7 +13,6 @@ def main():
                          password='')
 
     messages = reddit.inbox.messages(limit=None)
-    # print(sum(1 for x in messages))
     count = 0
     for message in messages:
         print("Checking: " + message.id)
@@ -22,7 +21,6 @@ def main():
             message.delete()
             print("https://www.reddit.com/message/messages/" + message.id + " deleted.\n")
             count += 1
-        # print(message.title)
     print(str(count) + " messages from " + bot_id + " deleted.")
 
 
